@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Kulim+Park:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+:root{
+    --fuente-kulim: 'Kulim Park', sans-serif;
+}
+
+html{
+    height: 100vh;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    box-sizing: border-box;
+    background-color: #99582A;
+    font-family: var(--fuente-kulim);
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 100%;
+    background-color: #6F1D1B;
+    border-radius: 5px;
+    align-items: center;
+    position: relative;
+
+    
+}
+
+.logo{
+    position: absolute;
+    left: 0;
+    width: 60px;
+    
+}
+
+.logoImg{
+    width: 100%;
+}
+
+
+.tituloDecoficador{
+    font-size: 2rem;
+    color: #FFE6A7;
+
+    @media screen and (max-width: 1000px){
+        font-size: 1.5rem;
+        
+    }
+
+   
+}
+
+.main{
+    display: flex;
+    margin-bottom: 50px;
+    margin-left: 80px;
+
+    @media screen and (max-width: 1000px){
+    margin-left: 0;
+    flex-direction: column;
+ }
+
+}
+
+.textarea__contenido{
+    width:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 200px;
+
+    @media screen and (max-width: 1000px){
+        padding-left: 0;
+        width: 100%;
+        padding: 30px;
+    }
+}
+
+.textarea{
+    background-color: #FFE6A7;
+    font-family: var(--fuente-kulim);
+    font-size: 2rem;
+    border-radius: 16px;
+    width: 100%;
+    height: 411px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    border: none;
+    padding-top: 30%; /* Ajusta este valor para centrar verticalmente el texto */
+    overflow: hidden; /* Oculta el desbordamiento */
+    line-height: normal; /* Line-height normal para que no afecte la posición vertical */ 
+    resize: none; /* Evita que se cambie el tamaño del textarea */
+    
+
+    @media screen and (max-width: 500px){
+        height: 300px;
+        
+    }
+}
+
+.inputexto{
+    width: 100%;
+
+}
+
+.textarea::placeholder{
+    text-align: center;
+    color: #432818;
+} 
+
+.textarea:focus{
+    outline: none;
+}
+
+.anuncioComponente{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.icono{
+    height: 16px;
+    width: 16px;
+}
+
+.anuncio{
+    font-family: var(--fuente-kulim);
+    font-size: 0.75rem;
+    color: #432818;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botones{
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.buttonEncriptar{
+    background-color: #BB9457;
+    color: #FFE6A7;
+    border-radius: 24px;
+    border: 2px solid #FFE6A7;
+    font-family: var(--fuente-kulim);
+    font-size: 1rem;
+    width: 328px;
+    height: 66px;
+    transition: all 0.3s;
+
+    @media screen and (max-width: 1000px){
+        width: 150px;
+        
+    }
+}
+
+.buttonEncriptar:hover{
+    cursor: pointer;
+    transform: translate(0, -3px);
+}
+
+.buttonDesencriptar{
+    background-color: #FFE6A7;
+    color: #6F1D1B;
+    border-radius: 24px;
+    border: 2px solid #6F1D1B;
+    font-family: var(--fuente-kulim);
+    font-size: 1rem;
+    width: 328px;
+    height: 66px;
+    transition: all 0.3s;
+
+    @media screen and (max-width: 1000px){
+        width: 150px;
+        
+    }
+}
+
+.buttonDesencriptar:hover{
+    cursor: pointer;
+    transform: translate(0, -3px);
+}
+
+.resultadoPadre{
+    position: relative;
+    width: 50vw;
+    height: 530px;
+
+    @media screen and (max-width: 1000px){
+        width: 100%;
+        position: initial;
+        padding: 30px;
+        
+    }
+}
+
+.resultadoContainer{
+    position: absolute;
+    background-color: #BB9457;
+    border-radius: 32px;
+    height: 100%;
+    right: 80px;
+    margin-top: 30px;
+    padding: 0 50px;
+
+    @media screen and (max-width: 1000px){
+        right: 0;
+        position: initial;
+        padding: 0;
+        
+    }
+}
+
+.elementsContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+}
+
+.textareaContainer{
+    
+    margin: 0 auto;
+    height: 60%;
+
+    
+
+
+}
+
+.mensaje{
+    background-color: #BB9457;
+    background-image: url("/assets/Muñeco.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    width: 300px;
+    height: 100%;
+    color: #432818;
+    resize: none;
+    font-family: var(--fuente-kulim);
+    font-size: 2rem;
+    text-align: center;
+}
+
+.mensaje:focus{
+    outline: none;
+}
+
+.textContainer{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: 1000px){
+        padding: 5px 15px;
+
+        
+    }
+}
+
+.buttonCopiar{
+    background-color: #432818;
+    color: #FFE6A7;
+    border-radius: 24px;
+    border: 2px solid #FFE6A7;
+    font-family: var(--fuente-kulim);
+    font-size: 1rem;
+    width: 250px;
+    height: 66px;
+    transition: all 0.3s;
+    display: none;
+
+    @media screen and (max-width: 1000px){
+        width: 200px;
+        
+    }
+}
+
+.buttonCopiar:hover{
+    cursor: pointer;
+    transform: translate(0, -3px);
+}
+
+.tituloResultado{
+    font-family: var(--fuente-kulim);
+    font-size: 1.3rem;
+    color: #432818;
+    margin-bottom: 5px;
+    text-align: center;
+
+    
+}
+
+.comentarioResultado{
+    font-family: var(--fuente-kulim);
+    font-size: 1rem;
+    color: #432818;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 200px;
+    
+}
+
+.footer{
+    color:#FFE6A7;
+    font-family: var(--fuente-kulim);
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    height: 45px;
+    width: 100%;
+    background-color: #6F1D1B;
+    border-radius: 5px;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+
+    @media screen and (max-width: 1000px){
+        position: initial;
+        
+    }
+    
+}
+
+
+
