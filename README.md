@@ -17,4 +17,4 @@ El proyecto "Decodificador-Alura" es una aplicación web que permite encriptar y
 ## Instalación
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/Decodificador-Alura.git
+   git clone https://github.com/Allis21/Decodificador.git
