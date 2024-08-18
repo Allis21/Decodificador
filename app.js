@@ -5,7 +5,7 @@ const comentarioResultado = document.querySelector(".comentarioResultado")
 const buttonCopiar = document.querySelector(".buttonCopiar")
 
 function contieneMayusculasOcaracteresEspeciales(textArea){
-    return /[A-Z]/.test(textArea) || /[^a-z ]/.test(textArea) || /[" "]/.test(textArea)
+    return /[A-Z]/.test(textArea) || /[^a-z ]/.test(textArea)
 }
 
 // La letra "e" es convertida para "enter"
@@ -18,23 +18,21 @@ function buttonEncriptar(){
     if (contieneMayusculasOcaracteresEspeciales(textArea.value)) {
         alert("El texto no debe contener mayúsculas o caracteres especiales");
         return limpiarCaja(); 
+    }else{
+        const textoEncriptado = encriptar(textArea.value);
+        mensaje.value = textoEncriptado;
+        textArea.value = "";
+        mensaje.style.backgroundImage = "none"
+        tituloResultado.style.display = "none"
+        comentarioResultado.style.display = "none"
+        buttonCopiar.style.display = "block"
     }
-    
-    const textoEncriptado = encriptar(textArea.value);
-    mensaje.value = textoEncriptado;
-    textArea.value = "";
-    mensaje.style.backgroundImage = "none"
-    tituloResultado.style.display = "none"
-    comentarioResultado.style.display = "none"
-    buttonCopiar.style.display = "block"
     
 }
 
 function encriptar(stringEncriptada){
-    stringEncriptada = removeSpecialCharacters(stringEncriptada);
     let matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
     stringEncriptada = stringEncriptada.toLowerCase()
-
     for(let i = 0; i < matrizCodigo.length; i++){
         if(stringEncriptada.includes(matrizCodigo[i][0])){
             stringEncriptada = stringEncriptada.replaceAll(matrizCodigo[i][0], matrizCodigo[i][1])
@@ -47,20 +45,19 @@ function buttonDesencriptar(){
     if (contieneMayusculasOcaracteresEspeciales(textArea.value)) {
         alert("El texto no debe contener mayúsculas o caracteres especiales");
         return limpiarCaja(); 
+    }else{
+        const textoDesencriptado = desencriptar(textArea.value);
+        mensaje.value = textoDesencriptado;
+        textArea.value = "";
+        mensaje.style.backgroundImage = "none"
+        tituloResultado.style.display = "none"
+        comentarioResultado.style.display = "none"
+        buttonCopiar.style.display = "block"
     }
-    
-    const textoDesencriptado = desencriptar(textArea.value);
-    mensaje.value = textoDesencriptado;
-    textArea.value = "";
-    mensaje.style.backgroundImage = "none"
-    tituloResultado.style.display = "none"
-    comentarioResultado.style.display = "none"
-    buttonCopiar.style.display = "block"
     
 }
 
 function desencriptar(stringDesencriptada){
-    stringDesencriptada = removeSpecialCharacters(stringDesencriptada);
     let matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
     stringDesencriptada = stringDesencriptada.toLowerCase()
 
@@ -78,7 +75,8 @@ function copyText(){
 }
 
 function limpiarCaja() {
-    document.querySelector(".textarea").value = '';
+    textArea.value = "";
 }
+
 
 
